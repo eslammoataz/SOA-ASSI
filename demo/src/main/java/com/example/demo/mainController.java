@@ -1,10 +1,5 @@
 package com.example.demo;
 import org.springframework.web.bind.annotation.*;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
-import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -25,6 +20,9 @@ public class mainController {
 
     @PostMapping("/addStudents")
     public String addStudents(@RequestBody List<StudentModel> students){
+        for(var x : students){
+            System.out.println(x.getID());
+        }
         Service.addStudent(students);
         return "Added Successfully";
     }
@@ -39,6 +37,11 @@ public class mainController {
         return Service.searchByGPA(gpa);
     }
 
+    @GetMapping("/search")
+    public List<StudentModel> searchByFirstName(@RequestParam double gpa , @RequestParam String firstName){
+        return Service.searchByGPA(gpa);
+    }
+
     @DeleteMapping("/delete/{id}")
     public String deleteById(@PathVariable  String id){
         if(Service.deleteByID(id))
@@ -46,6 +49,8 @@ public class mainController {
 
         return "Not Found";
     }
+
+
 
 
 
