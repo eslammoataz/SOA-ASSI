@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <University>
-<<<<<<< Updated upstream
   <Student ID="s1">
-    <FirstName>Eslam</FirstName>
+    <FirstName>Abdelrhman</FirstName>
     <LastName>Moataz</LastName>
     <Gender>Male</Gender>
     <GPA>4.0</GPA>
     <Level>4</Level>
+    <Address>Haram</Address>
+  </Student>
+  <Student ID="s6">
+    <FirstName>Mohamed</FirstName>
+    <LastName>Kareem</LastName>
+    <Gender>Male</Gender>
+    <GPA>2.3</GPA>
+    <Level>2</Level>
     <Address>Haram</Address>
   </Student>
   <Student ID="s3">
@@ -32,14 +39,5 @@
     <GPA>4.0</GPA>
     <Level>4</Level>
     <Address>Haram</Address>
-=======
-  <Student ID="13">
-    <FirstName>Test#1</FirstName>
-    <LastName>Test#2</LastName>
-    <Gender>male</Gender>
-    <GPA>1.0</GPA>
-    <Level>3</Level>
-    <Address>saddasd</Address>
->>>>>>> Stashed changes
   </Student>
 </University>

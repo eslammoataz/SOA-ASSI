@@ -38,18 +38,16 @@ public class TSevice {
     }
 
 
-    public List<StudentModel> search(Double gpa, String fname) {
+    public List<StudentModel> search(String gpa, String fname) {
         List<StudentModel> students = db.loadData();
         List<StudentModel> response = new ArrayList<>();
-
-        if (fname == null && gpa == null) {
+        if (fname.equals("null") && gpa.equals("null")) {
             return getData();
         }
         for (var student : students) {
-            boolean matchFirstName = fname == null || student.getFirstname().equals(fname);
-            boolean matchGPA = gpa == null || student.getGPA() == gpa;
-
-            if (matchFirstName && matchGPA) {
+            boolean matchFirstName = student.getFirstname().equals(fname);
+            boolean matchGPA = gpa.equals("null") ? false : student.getGPA() == Double.valueOf(gpa);
+            if (matchGPA || matchFirstName) {
                 response.add(student);
             }
         }
