@@ -45,10 +45,12 @@ public class TSevice {
         if (fname == null && gpa == null) {
             return getData();
         }
+        for (var student : students) {
+            boolean matchFirstName = fname == null || student.getFirstname().equals(fname);
+            boolean matchGPA = gpa == null || student.getGPA() == gpa;
 
-        for (var s : students) {
-            if ((fname == null || s.getFirstname().equals(fname)) && (gpa == null || s.getGPA() == gpa)) {
-                response.add(s);
+            if (matchFirstName && matchGPA) {
+                response.add(student);
             }
         }
         return response;
