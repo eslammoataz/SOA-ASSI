@@ -21,7 +21,7 @@ import java.util.List;
 
 @Component
 public class DataBase {
-    private String filePath = "E:\\Projects\\demo\\demo\\src\\main\\java\\com\\example\\demo\\University.xml";
+    private String filePath = "C:\\work\\SOA-ASSI\\demo\\src\\main\\java\\com\\example\\demo\\University.xml";
 
     public List<StudentModel> loadData() {
         List<StudentModel> studentsList = new ArrayList<>();
