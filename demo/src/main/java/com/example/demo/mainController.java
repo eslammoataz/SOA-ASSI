@@ -39,7 +39,7 @@ public class mainController {
 
     @GetMapping("/search")
     public List<StudentModel> searchByFirstName(@RequestParam double gpa , @RequestParam String firstName){
-        return Service.searchByGPA(gpa);
+        return Service.search(gpa , firstName);
     }
 
     @DeleteMapping("/delete/{id}")
