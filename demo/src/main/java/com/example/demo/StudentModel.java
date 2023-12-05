@@ -4,8 +4,8 @@ public class StudentModel {
 
     private String ID;
 
-    private String Firstname;
-    private String Lastname;
+    private String FirstName;
+    private String LastName;
     private String Gender;
     private double GPA;
 
@@ -33,12 +33,12 @@ public class StudentModel {
         this.ID = ID;
     }
 
-    public void setFirstname(String firstname) {
-        Firstname = firstname;
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
     }
 
-    public void setLastname(String lastname) {
-        Lastname = lastname;
+    public void setLastName(String lastName) {
+        LastName = lastName;
     }
 
     public void setGender(String gender) {
@@ -53,12 +53,12 @@ public class StudentModel {
         return ID;
     }
 
-    public String getFirstname() {
-        return Firstname;
+    public String getFirstName() {
+        return FirstName;
     }
 
-    public String getLastname() {
-        return Lastname;
+    public String getLastName() {
+        return LastName;
     }
 
     public String getGender() {
@@ -70,10 +70,10 @@ public class StudentModel {
     }
 
 
-    public StudentModel(String ID, String firstname, String lastname, String gender, double GPA, int level, String address) {
+    public StudentModel(String ID, String firstName, String lastName, String gender, double GPA, int level, String address) {
         this.ID = ID;
-        Firstname = firstname;
-        Lastname = lastname;
+        FirstName = firstName;
+        LastName = lastName;
         Gender = gender;
         this.GPA = GPA;
         Level = level;
@@ -84,8 +84,8 @@ public class StudentModel {
     public String toString() {
         return "StudentModel{" +
                 "ID='" + ID + '\'' +
-                ", Firstname='" + Firstname + '\'' +
-                ", Lastname='" + Lastname + '\'' +
+                ", Firstname='" + FirstName + '\'' +
+                ", Lastname='" + LastName + '\'' +
                 ", Gender='" + Gender + '\'' +
                 ", GPA=" + GPA +
                 ", Level=" + Level +

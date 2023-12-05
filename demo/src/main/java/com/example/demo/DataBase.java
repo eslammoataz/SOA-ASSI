@@ -21,7 +21,7 @@ import java.util.List;
 
 @Component
 public class DataBase {
-    private String filePath = "C:\\work\\SOA-ASSI\\demo\\src\\main\\java\\com\\example\\demo\\University.xml";
+    private String filePath = "E:\\Projects\\demo\\demo\\src\\main\\java\\com\\example\\demo\\University.xml";
 
     public List<StudentModel> loadData() {
         List<StudentModel> studentsList = new ArrayList<>();
@@ -142,11 +142,11 @@ public class DataBase {
         studentElement.setAttribute("ID", student.getID());
 
         Element firstNameElement = doc.createElement("FirstName");
-        Text firstNameText = doc.createTextNode(student.getFirstname());
+        Text firstNameText = doc.createTextNode(student.getFirstName());
         firstNameElement.appendChild(firstNameText);
 
         Element lastNameElement = doc.createElement("LastName");
-        Text lastNameText = doc.createTextNode(student.getLastname());
+        Text lastNameText = doc.createTextNode(student.getLastName());
         lastNameElement.appendChild(lastNameText);
 
         Element genderElement = doc.createElement("Gender");
@@ -179,7 +179,7 @@ public class DataBase {
         List<StudentModel> students = loadData();
         List<StudentModel> response = new ArrayList<>();
         for (var x : students) {
-            if (x.getFirstname().equals(name)) {
+            if (x.getFirstName().equals(name)) {
                 response.add(x);
             }
         }

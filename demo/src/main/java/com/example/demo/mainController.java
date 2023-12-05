@@ -2,8 +2,7 @@ package com.example.demo;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-    @CrossOrigin(origins = "*")
-
+@CrossOrigin(origins = "*")
 @RestController
 public class mainController {
 
@@ -21,12 +20,9 @@ public class mainController {
     }
 
     @PostMapping("/addStudents")
-    public String addStudents(@RequestBody List<StudentModel> students){
-        for(var x : students){
-            System.out.println(x.getID());
-        }
-        Service.addStudent(students);
-        return "Added Successfully";
+    public String addStudents(@RequestBody StudentModel student){
+
+        return Service.addStudent(student);
     }
 
     @GetMapping("/getbyname/{firstname}")
@@ -39,9 +35,9 @@ public class mainController {
         return Service.searchByGPA(gpa);
     }
 
-    @GetMapping("/search")
-    public List<StudentModel> searchByFirstName(@RequestParam String gpa , @RequestParam String firstName){
-        return Service.search(gpa, firstName);
+    @GetMapping("/search/{searchField}/{searchValue}")
+    public List<StudentModel> search(@PathVariable String searchField ,@PathVariable String searchValue){
+        return Service.search(searchField , searchValue);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -52,8 +48,15 @@ public class mainController {
         return "Not Found";
     }
 
+    @PutMapping("/update/{id}")
+    public String updateById(@PathVariable String id, @RequestBody StudentDto requestBody) {
+        return Service.updateByID(id , requestBody);
+    }
 
-
+    @GetMapping("/sort/{kind}/{sortField}")
+    public String sort(@PathVariable String sortField , @PathVariable String kind) {
+        return Service.sort(kind,sortField);
+    }
 
 
 
